@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontNormal = localFont({
+  src: "../assets/fonts/normal.woff2",
+});
+
+const fontMono = localFont({
+  src: "../assets/fonts/mono.woff2",
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "Next.js by Trishan - The React Framework",
@@ -16,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(fontNormal.className, fontMono.variable)}>
+        {children}
+      </body>
     </html>
   );
 }

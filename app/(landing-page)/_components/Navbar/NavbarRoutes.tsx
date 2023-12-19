@@ -16,24 +16,24 @@ const menus: IMenus[] = [
   },
   {
     title: "Analytics",
-    href: "/analytics",
+    href: "https://vercel.com/analytics",
     isNewTab: true,
   },
   {
     title: "Templates",
-    href: "/templates",
+    href: "https://vercel.com/templates/next.js",
     isNewTab: true,
   },
   {
     title: "Enterprise",
-    href: "/enterprise",
+    href: "https://vercel.com/contact/sales",
     isNewTab: true,
   },
 ];
 
 const NavbarRoutes = () => {
   return (
-    <div className=" text-sm flex gap-6 items-center ">
+    <div className="flex items-center gap-6 text-sm ">
       {menus.map((menu) => (
         <NavbarItem key={menu.title} menu={menu} />
       ))}
